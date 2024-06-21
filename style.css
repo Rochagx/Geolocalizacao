@@ -1,0 +1,112 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #000;
+    color: #0f0;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+}
+
+h1, p, button {
+    margin: 20px;
+    max-width: 90%;
+}
+
+button {
+    background-color: #000;
+    color: #0f0;
+    border: 2px solid #0f0;
+    border-radius: 6px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 18px;
+    box-shadow: 0 0 5px #0f0, 0 0 10px #0f0, 0 0 15px #0f0;
+    transition: all 0.3s ease;
+    animation: glow 1.5s infinite alternate;
+}
+
+button:hover {
+    background-color: #0f0;
+    color: #000;
+}
+
+#loc {
+    margin-top: 30px;
+    font-size: 20px;
+    border-right: 2px solid #0f0;
+    white-space: nowrap;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    animation: escrever 4s steps(40, end), piscar 0.75s step-end infinite;
+}
+
+#geoImage {
+    display: none;
+    margin-top: 20px;
+    width: 350px;
+    height: 350px;
+    border-radius: 20px; 
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+    opacity: 0;
+}
+
+@keyframes escrever {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes piscar {
+    from, to { border-color: transparent; }
+    50% { border-color: #0f0; }
+}
+
+@keyframes glow {
+    from {
+        box-shadow: 0 0 5px #0f0, 0 0 10px #0f0, 0 0 15px #0f0;
+    }
+    to {
+        box-shadow: 0 0 10px #0f0, 0 0 20px #0f0, 0 0 30px #0f0;
+    }
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    p, #loc {
+        font-size: 16px;
+    }
+
+    button {
+        width: 100%;
+        padding: 15px;
+        font-size: 20px;
+    }
+
+    #geoImage {
+        width: 250px;
+        height: 250px;
+        max-width: 90%;
+        border-radius: 20px; 
+    }
+}
+
+@media (min-width: 601px) {
+    body {
+        justify-content: flex-start;
+        padding-top: 20px;
+    }
+
+    #geoImage {
+        width: 350px;
+        height: 350px;
+        max-width: 60%;
+        border-radius: 20px; 
+    }
+}
