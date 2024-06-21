@@ -65,6 +65,17 @@ button:hover {
     50% { border-color: #0f0; }
 }
 
+body {
+    background: linear-gradient(135deg, #000 25%, #0a0a0a 25%, #0a0a0a 50%, #000 50%, #000 75%, #0a0a0a 75%, #0a0a0a 100%);
+    background-size: 50px 50px;
+    animation: backgroundMove 20s linear infinite;
+}
+
+@keyframes backgroundMove {
+    0% { background-position: 0 0; }
+    100% { background-position: 100% 100%; }
+}
+
 @keyframes glow {
     from {
         box-shadow: 0 0 5px #0f0, 0 0 10px #0f0, 0 0 15px #0f0;
